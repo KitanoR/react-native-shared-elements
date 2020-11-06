@@ -1,13 +1,48 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { enableScreens } from 'react-native-screens';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+
+import PeliculasScreen from './src/Peliculas/PeliculasScreen';
+
+// lista de eventos
+import EventScreen from './src/StackCarrousel/CarrouselScreen';
+import EventDetailScreen from './src/StackCarrousel/CarroselDetailScreen';
+
+const Stack = createSharedElementStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initalRouteName="EventScreen" headerMode='none'>
+        <Stack.Screen 
+          name="EventScreen"
+          component={EventScreen}
+        />
+        <Stack.Screen 
+          name="EventDetailScreen"
+          component={EventDetailScreen}
+          options={() => ({
+            gestureEnabled: false,
+            transitionSpec: {
+              open: { animation: 'timing', config: { duration: 400 } },
+              close: { animation: 'timing', config: { duration: 400 } },
+            },
+            cardStyleInterpolator: ({ current: { progress } }) => {
+              return {
+                cardStyle: {
+                  opacity: progress
+                }
+              }
+            }
+          })}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
 
