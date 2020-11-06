@@ -230,7 +230,6 @@ const EventScreen =  ({ navigation }) => {
                     inputRange,
                     outputRange: [(1 -1 / VISIBLE_ITEMS), 1, 0 ]
                   })
-                  console.log('id imagen general:  ',`item.${item.key}.image` );
                   return (
                     <Animated.View style={{ 
                         position: 'absolute',

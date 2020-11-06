@@ -27,7 +27,6 @@ const fadeInBottom = {
 
 const EventDetailScreen = ({ navigation, route }) => {
     const { item } = route.params;
-    console.log('id imagen detalle:  ',`item.${item.key}.image` );
     return (
         <View style={{ flex: 1 }}>
             <SharedElement id={`item.${item.key}.image`}

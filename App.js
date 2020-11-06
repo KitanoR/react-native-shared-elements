@@ -7,6 +7,7 @@ import { enableScreens } from 'react-native-screens';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
 import PeliculasScreen from './src/Peliculas/PeliculasScreen';
+import IndicadorScreen from './src/Indicador';
 
 // lista de eventos
 import EventScreen from './src/StackCarrousel/CarrouselScreen';
@@ -17,7 +18,11 @@ const Stack = createSharedElementStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initalRouteName="EventScreen" headerMode='none'>
+      <Stack.Navigator initalRouteName="IndicadorScreen" headerMode='none'>
+        <Stack.Screen
+          name="IndicadorScreen"
+          component={IndicadorScreen}
+        />
         <Stack.Screen 
           name="EventScreen"
           component={EventScreen}
@@ -40,6 +45,7 @@ export default function App() {
             }
           })}
         />
+        
       </Stack.Navigator>
     </NavigationContainer>
 
@@ -54,3 +60,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
