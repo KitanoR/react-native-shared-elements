@@ -12,13 +12,18 @@ import IndicadorScreen from './src/Indicador';
 // lista de eventos
 import EventScreen from './src/StackCarrousel/CarrouselScreen';
 import EventDetailScreen from './src/StackCarrousel/CarroselDetailScreen';
+import AcoredonScreen from './src/Acordeon';
 
 const Stack = createSharedElementStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initalRouteName="IndicadorScreen" headerMode='none'>
+      <Stack.Navigator initalRouteName="AcordeonScreen" headerMode='none'>
+        <Stack.Screen
+          name="AcordeonScreen"
+          component={IndicadorScreen}
+        />
         <Stack.Screen
           name="IndicadorScreen"
           component={IndicadorScreen}

@@ -9,10 +9,7 @@ import {
     Animated,
     TouchableOpacity,
 } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
 const { width, height } = Dimensions.get('screen');
-import { SharedElement } from 'react-navigation-shared-element';
-import * as Animatable from 'react-native-animatable';
 import { StatusBar } from 'expo-status-bar';
 
 
