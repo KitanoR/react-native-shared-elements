@@ -51,7 +51,8 @@ const Indicator = ({ measures, scrollX }) => {
                 bottom: -10,
                 transform: [
                     { translateX }
-                ]
+                ],
+                borderRadius: 10,
             }}
         />
     )
